@@ -1,8 +1,10 @@
 package struct;
 
+import entity.Person;
 import org.junit.Test;
 import struct.queque.MyQueque;
 import struct.stack.MyStack;
+import struct.stack.MyUniversalStack;
 
 public class DataStructTest {
 
@@ -37,5 +39,14 @@ public class DataStructTest {
         myStack.popStack();
         myStack.popStack();
         myStack.popStack();
+    }
+
+    @Test
+    public void universalStackTest(){
+        MyUniversalStack<Person> myUniversalStack = new MyUniversalStack(3,Person.class);
+        myUniversalStack.pushStack(new Person("小蓝"));
+        myUniversalStack.pushStack(new Person("小红"));
+        myUniversalStack.pushStack(new Person("小绿"));
+        myUniversalStack.show();
     }
 }
